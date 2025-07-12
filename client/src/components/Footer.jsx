@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="footer__container">
         <div className="footer__column">
           <h4>Quick Links</h4>
-          <ul className="footer__links">
+          <ul className="footer__links"> 
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="Punith.BR_Resume.pdf" download="Punith_BR_Resume.pdf">Resume</a></li>

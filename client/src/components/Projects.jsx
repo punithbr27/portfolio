@@ -10,7 +10,7 @@ import sunImg from '../assets/images/sun.png';
 const projectData = [
     { id: '1', img: smartAttendanceImg, title: 'Smart Attendance', desc: 'An automated attendance system using Python and OpenCV.', link: 'https://github.com/punithbr27/Smart-attendance-managment-system-using-Face-recognition' },
     { id: '2', img: blindAssistImg, title: 'Blind Assistance', desc: 'Real-time object detection with text-to-speech.', link: 'https://github.com/punithbr27/blind-assistant' },
-    { id: '3', img: portfolioImg, title: 'Portfolio', desc: 'This interactive portfolio, designed and built with React.', link: 'https://github.com/punithbr27/portfolio-website' },
+    { id: '3', img: portfolioImg, title: 'Portfolio', desc: 'This interactive portfolio, designed and built with React.', link: 'https://github.com/punithbr27/portfolio' },
     { id: '4', img: copdImg, title: 'COPD Detection', desc: 'An AI model to detect COPD from audio recordings.', link: 'https://github.com/punithbr27/COPD-Audio-Progression' }
 ];
 
@@ -32,7 +32,7 @@ const Projects = () => {
           onMouseEnter={() => setIsExpanded(true)}
           onMouseLeave={() => setIsExpanded(false)}
         >
-            <img src={sunImg} alt="My Skills" className="sun__image" />
+            <img src={sunImg} alt="My Skills" className="sun__image" /> 
              <div className="skills-content">
                 <h3>My Skills</h3>
                 <div className="skills-grid">
