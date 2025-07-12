@@ -20,7 +20,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className="section container">
-      <h2 className="section__title">Featured Projects</h2>
+      <h2 className="section__title">Projects</h2>
       
       {/* The main container now only has the dynamic class, not the event handlers */}
       <div className={`solar-system-container ${isExpanded ? 'is-expanded' : ''}`}>
