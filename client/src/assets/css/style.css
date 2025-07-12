@@ -1,0 +1,1353 @@
+/* ==================== GOOGLE FONTS & THEME VARIABLES ==================== */
+:root {
+    --bg-color: #1a1a1a;
+    --primary-red: #dc2626;
+    --primary-text-color: #f5f5f5;
+    --secondary-text-color: #a3a3a3;
+    --pill-bg: #262626;
+    --button-bg: #f5f5f5;
+    --button-text: #1a1a1a;
+    --social-icon-bg: #262626;
+    --header-height: 80px;
+}
+
+
+/* ==================== BASE STYLES ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+    html {
+        scroll-snap-type: y mandatory; /* Re-enable snapping for the full-screen effect */
+    }
+    .section, .hero.main {
+        height: 100vh; /* THE FIX: Every section now strictly takes up the full screen height */
+        min-height: auto; /* This can be removed or overridden */
+        padding: 2rem 0; /* Add padding inside the full screen section */
+    }
+
+body {
+    background-color: var(--bg-color);
+    background-image: url('https://www.transparenttextures.com/patterns/dark-paper.png');
+    color: var(--primary-text-color);
+    font-family: 'Poppins', sans-serif;
+    padding-top: var(--header-height);
+    overflow-x: hidden;
+    /* Prevents horizontal scrollbars */
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-text-color);
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* ==================== BACKGROUND ELEMENTS ==================== */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#haunting-soul,
+#roaming-spacecraft {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1;
+    transition: all 5s ease-in-out;
+}
+
+#haunting-soul {
+    top: 50%;
+    left: 50%;
+    width: 160px;
+    height: 160px;
+    opacity: 0.2;
+}
+
+#roaming-spacecraft {
+    top: 20%;
+    left: 80%;
+    width: 200px;
+    height: 200px;
+    opacity: 0.3;
+    transition-duration: 8s;
+}
+
+/* ==================== HEADER / NAV (STICKY HEADER) ==================== */
+.header {
+    position: fixed; /* This makes it "sticky" */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background-color: rgba(26, 26, 26, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #333333;
+    z-index: 100; /* HIGH Z-INDEX: Keeps it on top of all other content */
+    display: flex;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.nav__logo {
+    flex-shrink: 0; /* Prevents logo from shrinking */
+    /* font-weight: 700;
+    font-size: 1.5rem; */
+    color: var(--primary-red);
+}
+
+.nav__menu_desktop {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav__list {
+    display: flex;
+    gap: 3rem;
+}
+
+.nav__link {
+    color: var(--primary-red);
+    transition: color 0.3s;
+}
+
+.nav__link:hover {
+    color: var(--primary-text-color);
+}
+
+.nav__socials_desktop {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.nav__social-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    background-color: var(--social-icon-bg);
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.nav__social-link:hover {
+    background-color: var(--primary-red);
+    color: var(--primary-text-color);
+}
+
+.nav__toggle, .mobile-nav {
+    display: none;
+}
+
+
+/* ==================== HERO SECTION ==================== */
+.hero.main,
+.section {
+    min-height: calc(100vh - var(--header-height));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    scroll-snap-align: start;
+    position: relative;
+    z-index: 2;
+    padding: 60px 0;
+}
+.hero.main { flex-direction: row; align-items: center; padding: 0; }
+.footer { min-height: 0; padding: 0; scroll-snap-align: end; }
+
+
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+}
+
+.hero__text-content {
+    flex-basis: 55%;
+}
+
+.hero__image-content {
+    flex-basis: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero__welcome-pill {
+    background-color: var(--pill-bg);
+    color: var(--primary-text-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 999px;
+    display: inline-block;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Special Elite', cursive;
+    border: 1px solid #404040;
+}
+
+.hero__greeting {
+    font-size: 2.5rem;
+    /* Increased font size */
+    font-weight: 600;
+    color: var(--primary-red);
+    /* Changed to red */
+    margin-bottom: 0.25rem;
+    /* Reduced space below */
+    height: 50px;
+    /* Increased height to prevent layout shift */
+    transition: opacity 0.4s ease-in-out;
+}
+
+.hero__name {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 700;
+    color: var(--primary-text-color);
+}
+
+.hero__subtitle {
+    font-size: 2rem;
+    color: var(--secondary-text-color);
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero__typing-text {
+    font-size: 1.5rem;
+    color: var(--secondary-text-color);
+    height: 40px;
+    margin-bottom: 2.5rem;
+}
+
+#typing-effect {
+    color: var(--primary-red);
+    font-weight: 600;
+}
+
+/* Find and replace your old #typing-effect::after and its related styles */
+.typing-cursor {
+    display: inline-block;
+    background-color: var(--secondary-text-color);
+    margin-left: 0.1rem;
+    width: 3px;
+    height: 1.5rem;
+    /* Match the text size */
+    vertical-align: middle;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% {
+        background-color: var(--secondary-text-color);
+    }
+
+    49% {
+        background-color: var(--secondary-text-color);
+    }
+
+    50% {
+        background-color: transparent;
+    }
+
+    99% {
+        background-color: transparent;
+    }
+
+    100% {
+        background-color: var(--secondary-text-color);
+    }
+}
+
+#typing-effect.typing::after {
+    animation: none;
+}
+
+.button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 1rem 2rem;
+    border-radius: 999px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    border: 2px solid var(--button-bg);
+}
+
+.button:hover {
+    transform: scale(1.05);
+    background-color: transparent;
+    color: var(--button-bg);
+}
+
+.hero__image-wrapper {
+    width: 350px;
+    height: 350px;
+    border: 3px solid #404040;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+    animation: floatAnimation 4s ease-in-out infinite;
+    box-shadow: 0px 0px 35px 5px rgba(245, 245, 245, 0.25);
+}
+
+.hero__image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* ==================== REUSABLE SECTION STYLES ==================== */
+.section {
+    position: relative;
+    z-index: 2;
+    height: calc(100vh - var(--header-height));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.section__title {
+    font-size: 2.5rem; font-weight: 700;
+    text-align: center; margin-bottom: 4rem;
+}
+
+.section__title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-red);
+    margin: 10px auto 0;
+}
+
+
+.hero.main,
+.section {
+    scroll-snap-align: start;
+}
+
+/* ==================== ABOUT ME SECTION ==================== */
+#about .section__title {
+    margin-bottom: 2rem;
+}
+
+.about__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.about__description {
+    flex-basis: 60%;
+}
+
+.about__description p {
+    color: var(--primary-text-color);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.about__description p:last-child {
+    margin-bottom: 0;
+}
+
+.about__education {
+    flex-basis: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+    border-left: 2px solid #3a3a3a;
+    padding-left: 30px;
+}
+
+.education__card {
+    background-color: transparent;
+    width: 100%;
+    height: 120px;
+    perspective: 1000px;
+    border: none;
+    position: relative;
+    cursor: default;
+}
+
+.education__card::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -37px;
+    width: 12px;
+    height: 12px;
+    background-color: var(--bg-color);
+    border: 2px solid var(--secondary-text-color);
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+}
+
+.education__card:hover::before {
+    background-color: var(--primary-red);
+    border-color: var(--primary-red);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 0 10px var(--primary-red);
+}
+
+.education-card__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+}
+
+.education__card:hover .education-card__inner {
+    transform: rotateY(180deg);
+}
+
+.education-card__front,
+.education-card__back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.education-card__front {
+    background-color: var(--pill-bg);
+    border: 1px solid #3a3a3a;
+}
+
+.education-card__back {
+    background-color: var(--pill-bg);
+    border: 1px solid var(--primary-red);
+    transform: rotateY(180deg);
+    color: var(--secondary-text-color);
+}
+
+.education-card__back p {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.education-card__back p:last-child {
+    margin-bottom: 0;
+}
+
+.education-card__back strong {
+    color: var(--primary-text-color);
+}
+
+.education__card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    color: var(--primary-text-color);
+}
+
+.education__card .education__date {
+    font-size: 0.9rem;
+    color: var(--primary-red);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.education__card .education__details {
+    font-size: 1rem;
+    color: var(--secondary-text-color);
+}
+
+.mobile-education-container {
+    display: none;
+    }
+
+/* ==================== PROJECTS SECTION (SOLAR SYSTEM) ==================== */
+#projects {
+    justify-content: flex-start;
+    padding-top: 5rem;
+}
+
+#projects .section__title {
+    margin-bottom: 2rem;
+}
+
+.solar-system-container {
+    display: flex; /* <-- IMPORTANT FOR DESKTOP */
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: scaleY(0.6);
+    transform-origin: center top; 
+}
+
+.mobile-projects-container {
+    display: none;
+}
+
+.solar-system-container.is-expanded {
+    transform: scaleY(0.6) scale(1.8);
+}
+
+/* === INTERACTIVE SUN / SKILLS CONTAINER === */
+.sun {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transform: scaleY(1.67);
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.solar-system-container.is-expanded .sun {
+    transform: scaleY(1.67) scale(3.0);
+}
+
+.sun__image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: opacity 0.4s ease-out;
+}
+
+.solar-system-container.is-expanded .sun__image {
+    opacity: 0;
+}
+
+.skills-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.2);
+    transition: all 0.4s cubic-bezier(0.5, 0, 0.5, 1) 0.1s;
+}
+
+.solar-system-container.is-expanded .skills-content {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.skills-content h3 {
+    font-size: 0.5rem;
+    margin: 0 0 0.25rem 0;
+    color: var(--primary-red);
+}
+
+.skills-grid {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.skills-list {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    line-height: 1.4;
+}
+
+.skills-list li {
+    font-size: 0.35rem;
+    color: #e0e0e0;
+}
+
+/* --- PLANETS & SMOKEY TOOLTIPS --- */
+.orbit {
+    position: absolute;
+    border: 1px dashed #555;
+    border-radius: 50%;
+}
+
+.rotator {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: revolve infinite linear;
+}
+
+.planet {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border: none;
+    box-shadow: 0 0 0 2px #4f4f4f;
+    border-radius: 50%;
+    animation: counter-revolve infinite linear;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    transform: scaleY(1.67);
+}
+
+.rotator.is-paused,
+.rotator.is-paused .planet {
+    animation-play-state: paused;
+}
+
+.planet:hover { 
+    transform: scaleY(1.67) scale(1.1); 
+    box-shadow: 0 0 0 2px var(--primary-red); 
+}
+
+.planet__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.project-info {
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%) scaleY(1.67) translateY(10px);
+    background: none;
+    border: none;
+    width: 240px;
+    padding: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none;
+}
+
+.project-info::before {
+    content: '';
+    position: absolute;
+    width: 350px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    background-image: radial-gradient(ellipse at 50% 50%, rgba(90, 90, 90, 0.5) 0%, transparent 50%), radial-gradient(ellipse at 80% 90%, rgba(80, 80, 80, 0.4) 0%, transparent 60%), radial-gradient(ellipse at 10% 20%, rgba(80, 80, 80, 0.4) 0%, transparent 60%);
+    filter: blur(45px);
+    border-radius: 50%;
+    animation: smoke-drift 15s ease-in-out infinite alternate;
+}
+
+.planet:hover .project-info {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) scaleY(1.67) translateY(0);
+}
+
+.project-info-header,
+.project-info p {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+    padding: 0 1rem;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+}
+
+.project-info-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-info h4 {
+    font-size: 1.1rem;
+    line-height: 1.3;
+    margin: 0;
+    color: var(--primary-red);
+}
+
+.project-info__link {
+    font-size: 1.6rem;
+    color: var(--primary-text-color);
+    transition: all 0.3s;
+    pointer-events: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.project-info__link:hover {
+    color: var(--primary-red);
+}
+
+/* --- ANIMATIONS AND TIMINGS --- */
+#orbit-1 {
+    width: 100%;
+    height: 100%;
+}
+
+#orbit-1 .rotator {
+    animation-duration: 50s;
+    animation-delay: -25s;
+}
+
+#planet-1 {
+    top: -50px;
+    left: 50%;
+    margin-left: -50px;
+    animation-duration: 50s;
+    animation-delay: -25s;
+}
+
+#orbit-2 {
+    width: 85%;
+    height: 85%;
+}
+
+#orbit-2 .rotator {
+    animation-duration: 42s;
+    animation-delay: -5s;
+}
+
+#planet-2 {
+    top: -50px;
+    left: 50%;
+    margin-left: -50px;
+    animation-duration: 42s;
+    animation-delay: -5s;
+}
+
+#orbit-3 {
+    width: 70%;
+    height: 70%;
+}
+
+#orbit-3 .rotator {
+    animation-duration: 35s;
+    animation-delay: -30s;
+}
+
+#planet-3 {
+    top: -50px;
+    left: 50%;
+    margin-left: -50px;
+    animation-duration: 35s;
+    animation-delay: -30s;
+}
+
+#orbit-4 {
+    width: 55%;
+    height: 55%;
+}
+
+#orbit-4 .rotator {
+    animation-duration: 28s;
+    animation-delay: -15s;
+}
+
+#planet-4 {
+    top: -50px;
+    left: 50%;
+    margin-left: -50px;
+    animation-duration: 28s;
+    animation-delay: -15s;
+}
+
+
+
+/* ==================== CONTACT SECTION (UPDATED) ==================== */
+#contact.section {
+    justify-content: center; /* This centers the contact card and footer vertically */
+    padding-top: 6rem; /* THE FIX: Increased padding to push "Get in Touch" down */
+    padding-bottom: 1rem; /* Add some bottom padding as well */
+}
+
+.section__title {
+    margin-bottom: 2rem;
+}
+
+#contact .contact__container {
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+}
+
+#contact .contact__card {
+    background-color: #222222;
+    border: 1px solid #3a3a3a;
+    border-radius: 12px;
+    padding: 2.5rem;
+    flex-basis: 50%;
+}
+
+.contact-info h3,
+.contact-form h3 {
+    font-size: 1.5rem;
+    color: var(--primary-text-color);
+    margin-bottom: 1.25rem;
+}
+
+.contact-info p {
+    color: var(--secondary-text-color);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.contact__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact__list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--secondary-text-color);
+    font-size: 1rem;
+}
+
+.contact__list i {
+    font-size: 1.25rem;
+    color: var(--primary-red);
+}
+
+/* Form Styles */
+.form__group {
+    margin-bottom: 1.25rem;
+}
+
+.form__group label {
+    display: block;
+    /* <-- THIS IS THE FIX */
+    margin-bottom: 0.5rem;
+    color: var(--secondary-text-color);
+    font-size: 0.9rem;
+}
+
+.form__group input,
+.form__group textarea {
+    width: 100%;
+    background-color: #1a1a1a;
+    border: 1px solid #444;
+    color: var(--primary-text-color);
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form__group input:focus,
+.form__group textarea:focus {
+    outline: none;
+    border-color: var(--primary-red);
+}
+
+textarea {
+    resize: vertical;
+}
+
+.form__button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.9rem 2rem;
+}
+
+/* ==================== REDESIGNED COMPACT FOOTER ==================== */
+.footer {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #0c0c0c;
+    border-top: 1px solid #2a2a2a;
+    padding: 2.5rem 0;
+}
+
+.footer__container,
+.footer__bottom {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer__container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 6rem;
+    margin-bottom: 2rem;
+}
+
+.footer__column {
+    text-align: left;
+}
+
+.footer__column h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--primary-text-color);
+    margin-bottom: 1rem;
+}
+
+.footer__links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer__links a {
+    font-size: 0.9rem;
+    color: var(--secondary-text-color);
+    transition: color 0.3s;
+}
+
+.footer__links a:hover {
+    color: var(--primary-red);
+}
+
+.footer__socials {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1.5rem;
+}
+
+.footer__social-link {
+    font-size: 1.25rem;
+    color: var(--secondary-text-color);
+    transition: color 0.3s, transform 0.3s;
+}
+
+.footer__social-link:hover {
+    color: var(--primary-red);
+    transform: translateY(-2px);
+}
+
+.footer__bottom {
+    border-top: 1px solid #333333;
+    padding-top: 1.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+
+
+/* ==================== RESPONSIVE DESIGN & ANIMATIONS ==================== */
+@media (max-width: 992px) {
+    /* Hide the text menu, keep icons */
+    .nav__menu { display: none; }
+}
+
+@media (max-width: 768px) {
+    /* --- GENERAL MOBILE RESET --- */
+    html {
+        scroll-snap-type: none; /* Disables snapping for a smoother mobile scroll */
+    }
+    .container {
+        padding: 0 1.5rem;
+    }
+    .section, .hero.main, .footer-wrapper {
+        min-height: auto;
+        /* height: auto; */
+        padding: 4rem 0; /* Only vertical padding here */
+    }
+
+    /* .section, .hero.main {
+        min-height: auto; /* Sections are as tall as their content, not full screen */
+        /*height: auto;
+        padding: 4rem 0; /* Add vertical space between sections */
+    /*} */
+    .section__title {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    /* --- MOBILE HEADER & NAVIGATION --- */
+    .nav__menu_desktop, .nav__socials {
+        display: none; /* Hide desktop elements on mobile */
+    }
+    .nav__menu_mobile {
+        display: block; /* Show hamburger menu button */
+    }
+    .nav__toggle {
+        display: block; /* CRITICAL: This makes the hamburger button visible */
+        font-size: 1.5rem;
+        color: var(--primary-text-color);
+        background: transparent; border: none; cursor: pointer;
+        z-index: 1001;
+        position: relative; /* So it's not affected by parent flex properties */
+    }
+    /* THE FIX for the Mobile Slide-out Menu */
+    .mobile-nav {
+        display: flex;
+        position: fixed;
+        /* Position it to start BELOW the header */
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        height: calc(100vh - var(--header-height)); /* Fill remaining screen height */
+        background-color: rgba(26, 26, 26, 0.98); /* Slightly more opaque background */
+        backdrop-filter: blur(5px);
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        transform: translateY(-150%); /* Start hidden ABOVE the screen */
+        transition: transform 0.5s cubic-bezier(0.7, 0, 0.2, 1);
+        z-index: 1000;
+    }
+    /* When header has 'nav-open', the menu slides in */
+    .header.nav-open .mobile-nav {
+        transform: translateX(0);
+    }
+    .mobile-nav__list li {
+        margin-bottom: 2rem;
+    }
+    .mobile-nav__list a {
+    font-size: 1.5rem; /* THE FIX: Reduced font size to prevent cutoff */
+    font-weight: 500;
+    color: var(--primary-text-color);
+    }
+
+    /* --- HERO SECTION MOBILE --- */
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: .5rem;
+        justify-content: center; /* <-- ADD THIS LINE */
+    }
+    .hero__text-content {
+        order: 2;
+        margin-bottom: 12rem; /* Unnecessary but good for clarity */
+    }
+    .hero__image-content {
+        order: 1;
+        margin-bottom: 14rem;
+    }
+    .hero__image-wrapper { width: 220px; height: 220px; }
+    .hero__name { font-size: 2.5rem; }
+    .hero__subtitle { font-size: 1.25rem; }
+
+    /* --- ABOUT SECTION MOBILE --- */
+    .about__container {
+        flex-direction: column;
+        text-align: left; /* Keep the text inside aligned left */
+    }
+    .about__description{
+        padding: 0 1.5rem;
+        flex-basis: 100%; /* Makes it full width to stack */
+        text-align: left; /* Align text to the left */
+    }
+
+    .about__education {
+        display: none;
+    }
+
+    .mobile-education-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 1.5rem;
+    }
+
+    .mobile-edu-card {
+        background-color: transparent;
+        height: 140px; /* Slightly taller to accommodate content */
+        perspective: 1000px;
+        cursor: pointer;
+    }
+
+    /* This is the inner element that performs the flip */
+    .mobile-edu-flipper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+    
+    /* When is-flipped class is added by JS, this rule activates */
+    .mobile-edu-flipper.is-flipped {
+        transform: rotateY(180deg);
+    }
+
+    .mobile-edu-front, .mobile-edu-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden; /* For Safari */
+        backface-visibility: hidden;
+        border-radius: 12px;
+        padding: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    /* Styling for the FRONT of the card */
+    .mobile-edu-front {
+        background-color: var(--pill-bg);
+        border: 1px solid #3a3a3a;
+        text-align: left;
+    }
+
+    /* Styling for the BACK of the card */
+    .mobile-edu-back {
+        background-color: var(--pill-bg);
+        border: 1px solid var(--primary-red); /* Highlight the back */
+        transform: rotateY(180deg);
+        text-align: left;
+    }
+    .mobile-edu-back p {
+        font-size: 0.95rem;
+        color: var(--secondary-text-color);
+    }
+     .mobile-edu-back strong {
+        color: var(--primary-text-color);
+    }
+
+    .mobile-edu-front h4 {
+        font-size: 1.1rem;
+        color: var(--primary-text-color);
+        margin-bottom: 0.25rem;
+    }
+    .mobile-edu-front .mobile-edu-date {
+        font-size: 0.9rem;
+        color: var(--primary-red);
+        font-weight: 500;
+        display: block;
+        margin-bottom: 0.75rem;
+    }
+    .mobile-edu-front p {
+        font-size: 1rem;
+        color: var(--secondary-text-color);
+        line-height: 1.5;
+    }
+
+    .mobile-edu-card h4 {
+        font-size: 1.1rem;
+        color: var(--primary-text-color);
+        margin-bottom: 0.25rem;
+    }
+    .mobile-edu-date {
+        font-size: 0.9rem;
+        color: var(--primary-red);
+        font-weight: 500;
+        margin-bottom: 0.75rem;
+        display: block;
+    }
+    .mobile-edu-card p {
+        font-size: 1rem;
+        color: var(--secondary-text-color);
+        line-height: 1.5;
+    }
+
+    .about__description, .about__education {
+        flex-basis: 100%; /* Makes them full width to stack */
+        text-align: left;
+    }
+
+    /* --- PROJECTS SECTION MOBILE --- */
+    #projects {
+        padding-top: 4rem; /* Standard section padding */
+    }
+    .solar-system-container {
+        display: none; /* HIDE the solar system on mobile */
+    }
+    .mobile-projects-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Center the group of cards vertically */
+        gap: 1.25rem; /* Reduced gap between cards */
+        width: 100%;
+        height: 100%; /* Make the container use the full section height */
+    }
+    .mobile-project-card {
+        width: 90%;
+        margin: 0 auto;
+        flex-grow: 1;
+        max-height: 23%;
+        background-color: var(--pill-bg);
+        border: 1px solid #3a3a3a;
+        border-radius: 12px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+    }
+    .mobile-project-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary-red);
+    }
+    .mobile-card__image-container {
+        flex-shrink: 0;
+        height: 60%; /* Image takes up the majority of the small card height */
+    }
+    .mobile-card__image-link {
+        display: block;
+        height: 60%;
+    }
+
+    .mobile-card__image { width: 100%; height: 100%; object-fit: cover; }
+    .mobile-card__content {
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-grow: 1;
+    }
+    .mobile-card__text {
+        flex-grow: 1;
+        padding-right: 1rem;
+    }
+    .mobile-card__content h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.25rem;
+    }
+    .mobile-card__content p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+    .mobile-card__link { display: none; }
+
+    .mobile-card__actions {
+        flex-shrink: 0;
+    }
+
+    .mobile-card__icon-link {
+        font-size: 1.75rem;
+        color: var(--secondary-text-color);
+        transition: color 0.3s;
+    }
+
+    .mobile-card__icon-link:hover {
+        color: var(--primary-red);
+    }
+
+    
+
+    /* --- CONTACT SECTION MOBILE --- */
+    #contact {
+    min-height: auto; /* Allow the contact section to be its natural height */
+    padding-bottom: 4rem;
+}
+    .contact__container {
+        flex-direction: column;
+    }
+
+    #contact.section {
+    justify-content: center; /* This centers the contact card and footer vertically */
+    padding-top: 26rem; /* THE FIX: Increased padding to push "Get in Touch" down */
+    padding-bottom: 2rem; /* Add some bottom padding as well */
+}
+
+    /* --- FOOTER MOBILE --- */
+    .footer {
+        padding: 15rem 0 1.5rem 0;
+        min-height: auto;
+    }
+    .footer__container {
+        flex-direction: row; /* Lays out "Quick Links" and "Connect" side-by-side */
+        justify-content: space-between; /* Pushes them to opposite ends */
+        align-items: flex-start; /* Aligns their tops */
+        text-align: left;
+    }
+    .footer__column h4 {
+        margin-bottom: 0.75rem; /* Slightly reduce space below heading */
+    }
+    .footer__socials {
+        justify-content: flex-start; /* Align icons to the left within their column */
+    }
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes revolve {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes counter-revolve {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes smoke-drift {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg) scale(1.0);
+    }
+
+    to {
+        transform: translate(-45%, -55%) rotate(180deg) scale(1.5);
+    }
+}
