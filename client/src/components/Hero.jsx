@@ -3,7 +3,7 @@ import developerImg from '../assets/images/developer.png';
 
 // Animation Data
 const GREETINGS = [ "Hello !","ನಮಸ್ಕಾರ","नमस्ते", "నమస్కారం","வணக்கம்","നമസ്‌തേ "];
-const TYPING_TEXTS = ["ML Enthusiast", "Linux User", "Plan B Guy", "Reverse Engineer", "Loves solving problems, but gets bored while solving"]; // Shortened for better look
+const TYPING_TEXTS = ["ML Enthusiast ", "Linux User ", "Plan B Guy", "Reverse Engineer", "Loves solving problems, but gets bored while solving"]; // Shortened for better look
 
 const Hero = () => {
   // --- STATE MANAGEMENT ---
