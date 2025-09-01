@@ -57,7 +57,7 @@ const Projects = () => {
                             <div className="project-info-header">
                                 <h4>{proj.title}</h4>
                                 <a href={proj.link} target="_blank" rel="noopener noreferrer" className="project-info__link"><i className="fa-brands fa-github"></i></a>
-                            </div>
+                            </div> 
                             <p>{proj.desc}</p>
                         </div>
                     </div>

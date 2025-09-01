@@ -20,7 +20,7 @@ const educationData = [
   },
   {
     id: 3,
-    institution: 'St. Lawrence High School, Bengaluru',
+    institution: 'St. Lawrence High School, Bengaluru ',
     date: '2009 - 2021',
     details: 'SSLC (State board)',
     score: '94.88% (COVID 19 Batch)',

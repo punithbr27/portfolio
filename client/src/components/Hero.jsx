@@ -7,7 +7,7 @@ const TYPING_TEXTS = ["ML Enthusiast ", "Linux User ", "Plan B Guy", "Reverse En
 
 const Hero = () => {
   // --- STATE MANAGEMENT ---
-  const [greetingIndex, setGreetingIndex] = useState(0);
+  const [greetingIndex, setGreetingIndex] = useState(0) ;
   const [typingIndex, setTypingIndex] = useState(0);
   const [text, setText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
