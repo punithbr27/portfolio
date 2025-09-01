@@ -58,7 +58,7 @@ const Hero = () => {
           <div className="hero__text-content">
               <p className="hero__greeting">{GREETINGS[greetingIndex]}</p>
               <h1 className="hero__name">I'm Punith</h1>
-              <h2 className="hero__subtitle"> Predict the failure. Plan the escape. Execute anyway.</h2>
+              <h2 className="hero__subtitle"> Engineering today, innovating tomorrow.</h2>
               <p className="hero__typing-text">
                   <span id="typing-effect">{text}</span>
                   <span className="typing-cursor"></span> {/* CSS will handle the cursor */}
