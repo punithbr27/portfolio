@@ -38,7 +38,7 @@ const Projects = () => {
                 <div className="skills-grid">
                     <ul className="skills-list"><li>Python</li><li>C</li><li>C++</li></ul>
                     <ul className="skills-list"><li>OpenCV</li><li>TensorFlow</li><li>Scikit-learn</li></ul>
-                    <ul className="skills-list"><li>Git & GitHub</li><li>Docker</li><li>Linux</li></ul>
+                    <ul className="skills-list"><li>Linux</li><li>Docker</li><li>Git & GitHub</li></ul>
                 </div>
             </div>
         </div>
