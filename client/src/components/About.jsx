@@ -6,7 +6,7 @@ const educationData = [
     institution: 'PES University (RR Campus), Bengaluru',
     date: '2024 - Present',
     details: 'B.Tech in Computer Science and Engg',
-    cgpa: '8.25',
+    cgpa: '7.83',
     achievements: 'Qualified for CIE Ignite Stage 2',
   },
   {
@@ -15,7 +15,7 @@ const educationData = [
     date: '2021 - 2024',
     details: 'Diploma in Computer Science',
     cgpa: '9.83',
-    achievements: ['2x Runners in Cricket Tournament @SJP   ', '    DCET Rank : 24']
+    achievements: ['2x Runners in Cricket Tournament @SJP      .', '    DCET Rank : 24']
 
   },
   {
