@@ -15,7 +15,7 @@ const educationData = [
     date: '2021 - 2024',
     details: 'Diploma in Computer Science',
     cgpa: '9.83',
-    achievements: ['2x Runners in Cricket Tournament @SJP      .', '    DCET Rank : 24']
+    achievements: ['Cricket Tournament 🏏 | 2× Runners-up @ SJP.', '    DCET Rank : 24']
 
   },
   {
