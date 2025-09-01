@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import developerImg from '../assets/images/developer.png';
+import developerImg from '../assets/images/developer.jpg';
 
 // Animation Data
 const GREETINGS = [ "Hello !","ನಮಸ್ಕಾರ","नमस्ते", "నమస్కారం","வணக்கம்","നമസ്‌തേ "];
